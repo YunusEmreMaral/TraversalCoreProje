@@ -5,14 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\**" />
-    <Compile Remove="Views\MemberLayoutPartial\**" />
-    <Content Remove="Areas\**" />
-    <Content Remove="Views\MemberLayoutPartial\**" />
-    <EmbeddedResource Remove="Areas\**" />
-    <EmbeddedResource Remove="Views\MemberLayoutPartial\**" />
-    <None Remove="Areas\**" />
-    <None Remove="Views\MemberLayoutPartial\**" />
+    <None Include="Areas\Member\Views\Home\Index.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_FooterPartial.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_HeaderPartial.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_Navbar2Partial.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_NavbarPartial.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_RightbarPartial.cshtml" />
+    <None Include="Views\MemberLayoutPartial\_ScriptPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +35,10 @@
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Member\Data\" />
   </ItemGroup>
 
 </Project>

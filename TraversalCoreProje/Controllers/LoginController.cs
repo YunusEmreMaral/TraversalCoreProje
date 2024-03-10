@@ -64,7 +64,7 @@ namespace TraversalCoreProje.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _singInManager.PasswordSignInAsync(p.UserName, p.Password, false, true);
+                var result = await _singInManager.PasswordSignInAsync(p.UserName , p.Password, false, true);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Profile", new { area = "Member" });
