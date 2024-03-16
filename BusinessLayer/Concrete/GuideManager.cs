@@ -42,5 +42,14 @@ namespace BusinessLayer.Concrete
         {
             _guideDal.Update(t);
         }
+        public void TChangeToFalseByGuide(int id)
+        {
+            _guideDal.ChangeToFalseByGuide(id);
+        }
+
+        public void TChangeToTrueByGuide(int id)
+        {
+            _guideDal.ChangeToTrueByGuide(id);
+        }
     }
 }

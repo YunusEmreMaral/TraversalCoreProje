@@ -20,6 +20,13 @@ namespace TraversalCoreProje.Controllers
 
 		public IActionResult Index()
 		{
+			_logger.LogInformation("Index Sayfası Çağırıldı");
+			return View();
+		}
+		public IActionResult Test()
+
+		{
+			 _logger.LogInformation("Test Cagırıldı");
 			return View();
 		}
 

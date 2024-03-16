@@ -17,7 +17,10 @@ namespace BusinessLayer.Concrete
         {
             _commentDal = commentDal;
         }
-
+        public List<Comment> TGetListWithDestination()
+        {
+            return _commentDal.GetListCommentWithDestination();
+        }
         public void TAdd(Comment t)
         {
             _commentDal.Insert(t);
