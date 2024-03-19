@@ -1,0 +1,2 @@
+katmanlar olustu paketler yuklendi  proje referanslarý verildi . 
+repositoyry pattern  kullanýyoruz fakat  diger interfaceyide miras aldýrýyoruz 
