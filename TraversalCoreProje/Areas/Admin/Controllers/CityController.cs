@@ -18,8 +18,10 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
         public CityController(IDestinationService destinationService)
         {
             _destinationService = destinationService;
-        }
 
+            //s
+        }
+         
         public IActionResult Index()
         {
             return View();
