@@ -1,0 +1,64 @@
+﻿
+@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rezervasyonlar Yönetim Panelli</h1>
+
+<div class="card">
+    <h5 class="card-header">Duyuru Listesi  </h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Rota</th>
+                    <th>Kullanıcı</th>
+                    <th>tarih</th>
+                    <th>Kisi sayısı</th>
+                    <th>oNAYLA</th>
+                </tr>
+            </thead>
+
+            <tbody class="table-border-bottom-0 text-center">
+                @foreach (var item in Model)
+                {
+                    string truncatedContent = "";
+
+                    <tr>
+                        <td>@item.ReservationID</td>
+                        <td><strong>@item.Destination.City</strong></td>
+                        <td><strong>@item.AppUser.UserName</strong></td>
+                        <td><strong>@(((DateTime)item.ReservationDate).ToString("dd-MMM-yyyy"))</strong></td>
+                        <td><strong>@item.PersonCount</strong></td>
+
+
+                        @if (item.Status == "Onay Bekliyor")
+                        {
+                            <td>
+                                <a class="btn btn-outline-info" href="/Admin/Reservation/ChangeToTrue/@item.ReservationID"><i class="bx bx-checked me-1"></i> Onayla</a>
+                            </td>
+                        }
+                        else if(item.Status=="Onaylandı")
+                        {
+                            <td>
+                                <a class="btn btn-outline-danger" href="/Admin/Reservation/ChangeToFalse/@item.ReservationID"><i class="bx bx-checked me-1"></i> İptal Et</a>
+                            </td>
+                        }
+
+
+
+                        <td>
+                        </td>
+                      
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <a href="/Admin/Announcement/AddAnnouncement/" class="btn btn-outline-primary">Yeni Duyuru Oluştur!</a>
+</div>
+

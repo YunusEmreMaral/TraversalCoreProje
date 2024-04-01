@@ -44,16 +44,8 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
             return RedirectToAction("User", "Admin");
         }
 
-        public IActionResult CommentUser(int id)
-        {
-            _appUserService.TGetList();
-            return View();
-        }
+    
 
-        public IActionResult ReservationUser(int id)
-        {
-            var values = _reservationService.GetListWithReservationByAccepted(id);
-            return View(values);
-        }
+     
     }
 }

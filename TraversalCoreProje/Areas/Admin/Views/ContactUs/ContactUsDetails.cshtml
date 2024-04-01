@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.ContactUs
+
+@{
+    ViewData["Title"] = "ContactUsDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İletişim Detayları</h1>
+
+<div class="card text-center">
+    <div class="card-header">
+        @Model.Mail
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Subject</h5>
+        <p class="card-text">@Model.MessageBody</p>
+        <p class="card-text">@Model.MessageDate</p>
+
+        <a href="/Admin/ContactUs/Index" class="btn btn-primary">Geri Dön</a>
+    </div>
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>

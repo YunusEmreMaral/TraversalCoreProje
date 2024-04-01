@@ -16,6 +16,7 @@
                     <th>KULLANICI</th>
                     <th>ROTA</th>
                     <th>TARİH</th>
+                    <th>YORUM</th>
                     <th>SİL</th>
                 </tr>
             </thead>
@@ -25,9 +26,10 @@
                 {
                     <tr>
                         <td>@item.CommentID</td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.CommentUser</strong></td>
+                        <td> <strong>@item.AppUser.UserName</strong></td>
                         <td>@item.Destination.City</td>
                         <td>@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</td>
+                        <td>@(item.CommentContent.Length > 50 ? item.CommentContent.Substring(0, 50) + "..." : item.CommentContent)</td>
                         <td><a href="/Admin/Comment/DeleteComment/@item.CommentID" class="btn btn-outline-danger">Sil</a></td>
                     </tr>
                 }

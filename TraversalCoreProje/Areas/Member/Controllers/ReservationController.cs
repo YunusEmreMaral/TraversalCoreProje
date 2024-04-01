@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace TraversalCoreProje.Areas.Member.Controllers
 {
     [Area("Member")]
+    [Route("Member/[controller]/[action]")]
     public class ReservationController : Controller
     {
         DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
@@ -57,12 +58,15 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         }
 
         [HttpPost]
-        public IActionResult NewReservation(Reservation p)
+        public async Task<IActionResult> NewReservation(Reservation p)
         {
-            p.AppUserID = 3;
-            p.Status = "Onay bekliyor...";
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            p.AppUserID =values.Id;
+            p.Status = "Onay Bekliyor";
+            
             reservationManager.TAdd(p);
-            return RedirectToAction("MyCurrentReservation");
+            return RedirectToAction("MyApprovalReservation", "Reservation");
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfContactUsDal : GenericRepository<ContactUs> , IContactUsDal
+    public class EfContactUsDal : GenericRepository<ContactUs>, IContactUsDal
     {
         public void ContactUsStatusChangeToFalse(int id)
         {

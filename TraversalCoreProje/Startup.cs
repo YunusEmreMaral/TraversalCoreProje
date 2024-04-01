@@ -2,15 +2,22 @@ using BusinessLayer.Abstarct;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRule;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,12 +28,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using TraversalCoreProje.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProje.Models;
 
 namespace TraversalCoreProje
 {
 	public class Startup
 	{
+
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -37,39 +46,64 @@ namespace TraversalCoreProje
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+            services.AddScoped<GetAllDestinationQueryHandler>();
+            services.AddScoped<GetDestinationByIDQueryHandler>();
+            services.AddScoped<CreateDestinationCommandHandler>();
+            services.AddScoped<RemoveDestinationCommandHandler>();
+            services.AddScoped<UpdateDestinationCommandHandler>();
+
+            services.AddMediatR(typeof(Startup)); // Önemli 
+
+
+
             services.AddLogging(x =>
             {
                 x.ClearProviders();
                 x.SetMinimumLevel(LogLevel.Debug);
                 x.AddDebug();
-            });
+            });  // loglama 
 
 
-            services.AddDbContext<Context>();
-			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>()
-				.AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+            services.AddDbContext<Context>(); // efcore ile veri tabaný baglantýsý
 
-            services.ContainerDependencies();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>()
+                .AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<Context>();
 
 
-            services.AddControllersWithViews();
+            services.AddHttpClient();
+            services.ContainerDependencies();  // bagýmlýlýklarýn eklenmesi
+
+            services.AddAutoMapper(typeof(Startup)); // auto mapper 
+
+            services.CustomerValidator();
+
+            services.AddControllersWithViews().AddFluentValidation(); // mvc yapýsýný ekler
 
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
+            services.AddLocalization(opt =>
+            {
+                opt.ResourcesPath = "Resources";
+            });
 
-            services.AddMvc();
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+
+
+
         }
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
 		{
-            var path = Directory.GetCurrentDirectory();
-            //loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");  // BURAYA TEKRAR DÖN 
 
-            if (env.IsDevelopment())
+
+            var path = Directory.GetCurrentDirectory();
+            loggerFactory.AddFile($"{path}\\Logs\\Log1.txt"); 
+
+            if (env.IsDevelopment())    // ortamý berlielem 
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -80,15 +114,20 @@ namespace TraversalCoreProje
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
-			app.UseHttpsRedirection();
-			app.UseStaticFiles();
-			app.UseAuthentication();
-			app.UseRouting();
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");  // error page
+			app.UseHttpsRedirection();  // https yapma 
+			app.UseStaticFiles();  // css js statik dosyalarý sunma
+			app.UseAuthentication(); // kimlik dogrulama
 
-			app.UseAuthorization();
+            var suppertesCultures = new[] { "en", "fr", "es", "gr", "tr", "de" };
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(suppertesCultures[4]).AddSupportedCultures(suppertesCultures).AddSupportedUICultures(suppertesCultures);
+            app.UseRequestLocalization(localizationOptions);
 
-			app.UseEndpoints(endpoints =>
+            app.UseRouting(); // route 
+
+			app.UseAuthorization(); // yetkilendirme 
+
+			app.UseEndpoints(endpoints =>  // arealarý belirtme falan .
 			{
 				endpoints.MapControllerRoute(
 					name: "default",

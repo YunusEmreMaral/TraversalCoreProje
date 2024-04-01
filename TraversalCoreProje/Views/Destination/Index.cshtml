@@ -6,6 +6,18 @@
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
 
+<style>
+    .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+        .hover-effect:hover {
+            transform: scale(1.05); /* Biraz büyüme efekti */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+            border-radius: 12px; /* Border radius */
+        }
+</style>
+
 <!-- about breadcrumb -->
 <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
@@ -27,9 +39,9 @@
                 {
                     <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
                         <div class="column">
-                            <a href="/Destination/DestinationDetails/@item.DestinationID"><img src="@item.Image" alt="" class="img-fluid"></a>
+                            <a href="/Destination/DestinationDetails/@item.DestinationID"><img src="@item.Image" alt="" class="img-fluid hover-effect"></a>
                             <div class="info">
-                                <h4><a href="blog-single.html">@item.City</a></h4>
+                                <h4><a href="/Destination/DestinationDetails/@item.DestinationID">@item.City</a></h4>
                                 <p>@item.DayNight</p>
                                 <div class="dst-btm">
                                     <h6 class=""> Başlayan Fiyatlarla </h6>

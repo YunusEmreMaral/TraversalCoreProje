@@ -76,5 +76,11 @@ namespace TraversalCoreProje.Controllers
             }
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _singInManager.SignOutAsync();
+            return RedirectToAction("Index", "Default");
+        }
     }
 }

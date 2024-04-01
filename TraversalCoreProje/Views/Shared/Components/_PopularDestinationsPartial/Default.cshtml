@@ -1,11 +1,23 @@
 ﻿@using EntityLayer.Concrete
 @model List<Destination>
 
+<style>
+    .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+        .hover-effect:hover {
+            transform: scale(1.20); /* Biraz büyüme efekti */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+            border-radius: 12px; /* Border radius */
+        }
+</style>
+
 <section class="w3l-grids-3 py-5">
     <div class="container py-md-5">
         <div class="title-content text-left mb-lg-5 mb-4">
             <h6 class="sub-title">Visit</h6>
-            <h3 class="hny-title">Popüler Rotalar</h3>
+            <h3 class="hny-title">Popüler Tur Rotalar</h3>
         </div>
         <div class="row bottom-ab-grids">
             <!--/row-grids-->
@@ -16,7 +28,7 @@
                         <a href="#" class="card_title p-lg-4d-block">
                             <div class="row align-items-center">
                                 <div class="col-sm-5 subject-img">
-                                    <img src="@item.Image" class="img-fluid" alt="">
+                                    <img src="@item.Image" class="img-fluid hover-effect" alt="">
                                 </div>
                                 <div class="col-sm-7 subject-content mt-sm-0 mt-4">
                                     <h4>@item.City</h4>

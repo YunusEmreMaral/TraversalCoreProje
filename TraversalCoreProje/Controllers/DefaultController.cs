@@ -9,6 +9,13 @@ namespace TraversalCoreProje.Controllers
         public IActionResult Index()
         {
             return View();
+
+
         }
+
+
+
+
+
     }
 }
