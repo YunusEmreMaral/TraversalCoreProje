@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>

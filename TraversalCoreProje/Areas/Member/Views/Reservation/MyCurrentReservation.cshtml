@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "MyCurrentReservation";
+<<<<<<< HEAD
     Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
@@ -26,11 +27,20 @@
         </div>
     </div>
 </div>
+=======
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Aktif Rezervasyonlarım</h1>
+<hr />
+<br />
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 
 @if (Model.Count == 0)
 {
     <h4>Hiç aktif rezervasyonunuz bulunmamaktadır.</h4>
 }
+<<<<<<< HEAD
 
 else
 {
@@ -86,5 +96,28 @@ else
         </div>
     </div>
     <!-- Basic Tables end -->
+=======
+else
+{
+    <table class="table table-borderless text-center">
+        <tr>
+            <th>#</th>
+            <th>Lokasyon</th>
+            <th>Kişi Sayısı</th>
+            <th>Rezervasyon Tarihi</th>
+            <th>Durum</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.ReservationID</th>
+                <td>@item.Destination.City</td>
+                <td>@item.PersonCount</td>
+                <td>@item.ReservationDate</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 }
 

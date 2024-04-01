@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 namespace TraversalCoreProje.Areas.Member.Controllers
 {
     [Area("Member")]
+<<<<<<< HEAD
     [Route("Member/[controller]/[action]")]
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     public class ReservationController : Controller
     {
         DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
@@ -58,6 +61,7 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public async Task<IActionResult> NewReservation(Reservation p)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
@@ -67,6 +71,14 @@ namespace TraversalCoreProje.Areas.Member.Controllers
             
             reservationManager.TAdd(p);
             return RedirectToAction("MyApprovalReservation", "Reservation");
+=======
+        public IActionResult NewReservation(Reservation p)
+        {
+            p.AppUserID = 3;
+            p.Status = "Onay bekliyor...";
+            reservationManager.TAdd(p);
+            return RedirectToAction("MyCurrentReservation");
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
     }
 }

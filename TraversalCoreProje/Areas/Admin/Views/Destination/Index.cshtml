@@ -18,9 +18,13 @@
                     <th>ŞEHİR</th>
                     <th>FİYAT</th>
                     <th>KAPASİTE</th>
+<<<<<<< HEAD
                     <th>GOR</th>
                     <th>gÜNCELLE</th>
                     <th>SİL</th>
+=======
+                    <th>İŞLEM SEÇİNİZ</th>
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                 </tr>
             </thead>
 
@@ -29,11 +33,16 @@
                 {
                     <tr>
                         <td>@item.DestinationID</td>
+<<<<<<< HEAD
                         <td> <strong>@item.City</strong></td>
+=======
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.City</strong></td>
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                         <td>@item.Price ₺</td>
                         <td>@item.Capacity</td>
 
                         <td>
+<<<<<<< HEAD
 
 
                             <a class="btn btn-info" href="/Destination/DestinationDetails/@item.DestinationID"><i class="bx bx-street-view me-1"></i> Sitede Gör</a>
@@ -47,6 +56,20 @@
                             <a class="btn btn-danger" href="/Admin/Destination/DeleteDestination/@item.DestinationID"><i class="bx bx-trash me-1"></i> Sil</a>
                         </td>
                             
+=======
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-plus"></i>
+                                </button>
+
+                             
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Destination/DestinationDetails/@item.DestinationID"><i class="bx bx-log-out-circle"></i> Sitede Gör!</a>
+                                    <a class="dropdown-item" href="/Admin/Destination/UpdateDestination/@item.DestinationID"><i class="bx bx-edit-alt me-1"></i> Güncelle</a>
+                                    <a class="dropdown-item" href="/Admin/Destination/DeleteDestination/@item.DestinationID"><i class="bx bx-trash me-1"></i> Sil</a>
+                                </div>
+                            </div>
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                         </td>
                     </tr>
                 }

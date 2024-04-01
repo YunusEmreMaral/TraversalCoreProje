@@ -2,18 +2,31 @@
 @model List<Comment>
 
 <div class="comments mt-5">
+<<<<<<< HEAD
     <h4 class="side-title ">Yorumlar (@ViewBag.CommentCount)</h4>
+=======
+    <h4 class="side-title ">Yorumlar (2)</h4>
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     @foreach (var item in Model)
     {
         <div class="media mt-4">
             <div class="img-circle">
+<<<<<<< HEAD
                 <img src="@item.AppUser.ImageUrl" class="img-fluid" alt="@item.AppUser.Name">
+=======
+                <img src="~/Traversal-Liberty/assets/images/c1.jpg" class="img-fluid" alt="...">
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
             </div>
             <div class="media-body">
                 <ul class="time-rply mb-2">
                     <li>
+<<<<<<< HEAD
                         <a href="#URL" class="name mt-0 mb-2 d-block">@item.AppUser.Name @item.AppUser.Surname</a>
                         @(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))
+=======
+                        <a href="#URL" class="name mt-0 mb-2 d-block">@item.CommentUser</a>
+                        @item.CommentDate
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 
                     </li>
                     <li class="reply-last">

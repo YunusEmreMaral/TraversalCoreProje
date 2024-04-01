@@ -33,6 +33,7 @@ namespace BusinessLayer.Concrete
             return _destinationDal.GetByID(id);
         }
 
+<<<<<<< HEAD
         public Destination TGetDestinationWithGuide(int id)
         {
             return _destinationDal.GetDestinationWithGuide(id);
@@ -43,6 +44,8 @@ namespace BusinessLayer.Concrete
             return _destinationDal.GetLast4Destinations();
         }
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         public List<Destination> TGetList()
         {
             return _destinationDal.GetList();

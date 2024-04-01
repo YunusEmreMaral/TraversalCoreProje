@@ -17,7 +17,10 @@ namespace EntityLayer.Concrete
         public bool CommentState { get; set; }
         public int DestinationID { get; set; }
         public Destination Destination { get; set; }
+<<<<<<< HEAD
         public int AppUserID { get; set; }
         public AppUser AppUser { get; set; }
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

@@ -50,6 +50,7 @@ namespace BusinessLayer.Concrete
         {
             _commentDal.Update(t);
         }
+<<<<<<< HEAD
         public List<Comment> TGetListCommentWithDestinationAndUser(int id)
         {
             return _commentDal.GetListCommentWithDestinationAndUser(id);
@@ -59,5 +60,7 @@ namespace BusinessLayer.Concrete
         {
             return _commentDal.GetListUserComments(id);
         }
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

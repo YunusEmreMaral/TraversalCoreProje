@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+=======
+<Project Sdk="Microsoft.NET.Sdk.Web">
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Remove="CQRS\Commands\GuideCommands\**" />
     <Content Remove="CQRS\Commands\GuideCommands\**" />
     <EmbeddedResource Remove="CQRS\Commands\GuideCommands\**" />
@@ -15,6 +20,8 @@
     <None Include="Areas\Admin\Views\DestinationMediatR\AddGuide.cshtml" />
     <None Include="Areas\Admin\Views\DestinationMediatR\GetGuides.cshtml" />
     <None Include="Areas\Admin\Views\DestinationMediatR\Index.cshtml" />
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     <None Include="Areas\Member\Views\Home\Index.cshtml" />
     <None Include="Views\MemberLayoutPartial\_FooterPartial.cshtml" />
     <None Include="Views\MemberLayoutPartial\_HeaderPartial.cshtml" />
@@ -22,6 +29,7 @@
     <None Include="Views\MemberLayoutPartial\_NavbarPartial.cshtml" />
     <None Include="Views\MemberLayoutPartial\_RightbarPartial.cshtml" />
     <None Include="Views\MemberLayoutPartial\_ScriptPartial.cshtml" />
+<<<<<<< HEAD
     <None Include="Views\Shared\Components\_MemberLayoutFooter\Default.cshtml" />
     <None Include="Views\Shared\Components\_MemberLayoutHead\Default.cshtml" />
     <None Include="Views\Shared\Components\_MemberLayoutLanguages\Default.cshtml" />
@@ -1444,18 +1452,26 @@
     <None Include="wwwroot\member\theme-assets\vendors\js\ui\screenfull.min.js" />
     <None Include="wwwroot\member\theme-assets\vendors\js\ui\unison.min.js" />
     <None Include="wwwroot\member\theme-assets\vendors\js\vendors.min.js" />
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue-comment.yml" />
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue.yml" />
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\issue-staler.yml" />
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     <PackageReference Include="ClosedXML" Version="0.102.2" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="MailKit" Version="4.4.0" />
+<<<<<<< HEAD
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
@@ -1470,20 +1486,35 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.12" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="MimeKit" Version="4.4.0" />
+<<<<<<< HEAD
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
+=======
+    <PackageReference Include="Serilog" Version="3.1.1" />
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+<<<<<<< HEAD
     <ProjectReference Include="..\ClassLibrary1\DTOLayer.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
     <ProjectReference Include="..\SignalRConsume\SignalRConsume.csproj" />
+=======
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+<<<<<<< HEAD
     <Folder Include="Areas\Member\Data\" />
+=======
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="wwwroot\Logs\" />
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     <Folder Include="wwwroot\pdfreports\" />
   </ItemGroup>
 

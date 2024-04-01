@@ -209,9 +209,12 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
                     b.Property<int>("AppUserID")
                         .HasColumnType("int");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.Property<string>("CommentContent")
                         .HasColumnType("nvarchar(max)");
 
@@ -229,8 +232,11 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CommentID");
 
+<<<<<<< HEAD
                     b.HasIndex("AppUserID");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.HasIndex("DestinationID");
 
                     b.ToTable("Comments");
@@ -312,9 +318,12 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("CoverImage")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.Property<string>("DayNight")
                         .HasColumnType("nvarchar(max)");
 
@@ -327,9 +336,12 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Details2")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<int?>("GuideID")
                         .HasColumnType("int");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -344,8 +356,11 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("DestinationID");
 
+<<<<<<< HEAD
                     b.HasIndex("GuideID");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.ToTable("Destinations");
                 });
 
@@ -407,9 +422,12 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<string>("Description2")
                         .HasColumnType("nvarchar(max)");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -624,18 +642,22 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
                         .WithMany("Comments")
                         .HasForeignKey("AppUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.HasOne("EntityLayer.Concrete.Destination", "Destination")
                         .WithMany("Comments")
                         .HasForeignKey("DestinationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.Navigation("AppUser");
 
                     b.Navigation("Destination");
@@ -650,6 +672,11 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Guide");
                 });
 
+=======
+                    b.Navigation("Destination");
+                });
+
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
             modelBuilder.Entity("EntityLayer.Concrete.Reservation", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
@@ -722,8 +749,11 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
                 {
+<<<<<<< HEAD
                     b.Navigation("Comments");
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
                     b.Navigation("Reservations");
                 });
 
@@ -733,11 +763,14 @@ namespace DataAccessLayer.Migrations
 
                     b.Navigation("Reservations");
                 });
+<<<<<<< HEAD
 
             modelBuilder.Entity("EntityLayer.Concrete.Guide", b =>
                 {
                     b.Navigation("Destinations");
                 });
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 #pragma warning restore 612, 618
         }
     }

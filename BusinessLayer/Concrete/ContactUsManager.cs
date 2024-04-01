@@ -20,22 +20,38 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(ContactUs t)
         {
+<<<<<<< HEAD
             _contactUsDal.Insert(t);
+=======
+            throw new NotImplementedException();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
 
         public void TContactUsStatusChangeToFalse(int id)
         {
+<<<<<<< HEAD
             _contactUsDal.ContactUsStatusChangeToFalse(id);
+=======
+            throw new NotImplementedException();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
 
         public void TDelete(ContactUs t)
         {
+<<<<<<< HEAD
             _contactUsDal.Delete(t);
+=======
+            throw new NotImplementedException();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
 
         public ContactUs TGetByID(int id)
         {
+<<<<<<< HEAD
             return _contactUsDal.GetByID(id);
+=======
+            throw new NotImplementedException();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
 
         public List<ContactUs> TGetList()
@@ -55,7 +71,11 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(ContactUs t)
         {
+<<<<<<< HEAD
             _contactUsDal.Update(t);
+=======
+            throw new NotImplementedException();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         }
     }
 }

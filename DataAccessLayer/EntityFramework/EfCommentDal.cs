@@ -17,6 +17,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c = new Context())
             {
+<<<<<<< HEAD
                 return c.Comments.Include(x => x.Destination).Include(x=>x.AppUser).ToList();
             }
         }
@@ -33,6 +34,9 @@ namespace DataAccessLayer.EntityFramework
             using(var c=new Context())
             {
                 return c.Comments.Include(x => x.Destination).Where(x => x.AppUserID == id).ToList();
+=======
+                return c.Comments.Include(x => x.Destination).ToList();
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
             }
         }
     }

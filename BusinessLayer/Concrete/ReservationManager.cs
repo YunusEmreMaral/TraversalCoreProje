@@ -38,6 +38,7 @@ namespace BusinessLayer.Concrete
             _reservationDal.Insert(t);
         }
 
+<<<<<<< HEAD
         public void TChangeToFalseByGuide(int id)
         {
             _reservationDal.ChangeToFalseByGuide(id);
@@ -48,6 +49,8 @@ namespace BusinessLayer.Concrete
             _reservationDal.ChangeToTrueByGuide(id);
         }
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         public void TDelete(Reservation t)
         {
             _reservationDal.Delete(t);
@@ -63,11 +66,14 @@ namespace BusinessLayer.Concrete
             return _reservationDal.GetList();
         }
 
+<<<<<<< HEAD
         public List<Reservation> TGetReservationWithUserandDestination()
         {
             return _reservationDal.GetReservationWithUserandDestination();
         }
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         public void TUpdate(Reservation t)
         {
             _reservationDal.Update(t);

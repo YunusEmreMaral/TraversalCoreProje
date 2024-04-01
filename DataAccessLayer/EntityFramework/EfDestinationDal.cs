@@ -1,8 +1,13 @@
 ﻿using DataAccessLayer.Abstract;
+<<<<<<< HEAD
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
+=======
+using DataAccessLayer.Repository;
+using EntityLayer.Concrete;
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +18,7 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfDestinationDal : GenericRepository<Destination>, IDestinationDal
     {
+<<<<<<< HEAD
         public Destination GetDestinationWithGuide(int id)
         {
             using (var c = new Context())
@@ -29,5 +35,7 @@ namespace DataAccessLayer.EntityFramework
                 return values;
             }
         }
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

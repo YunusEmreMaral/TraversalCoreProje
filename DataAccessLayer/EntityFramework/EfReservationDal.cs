@@ -13,6 +13,7 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfReservationDal:GenericRepository<Reservation> , IReservationDal
     {
+<<<<<<< HEAD
         Context context = new Context();
 
         public void ChangeToFalseByGuide(int id)
@@ -29,6 +30,8 @@ namespace DataAccessLayer.EntityFramework
             context.SaveChanges();
         }
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
         public List<Reservation> GetListWithReservationByAccepted(int id)
         {
             using (var context = new Context())
@@ -52,6 +55,7 @@ namespace DataAccessLayer.EntityFramework
                 return context.Reservations.Include(x => x.Destination).Where(x => x.Status == "Onay Bekliyor" && x.AppUserID == id).ToList();
             }
         }
+<<<<<<< HEAD
         public List<Reservation> GetReservationWithUserandDestination()
         {
             using (var context = new Context())
@@ -59,5 +63,7 @@ namespace DataAccessLayer.EntityFramework
                 return context.Reservations.Include(x => x.Destination).Include(x=>x.AppUser).ToList();
             }
         }
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

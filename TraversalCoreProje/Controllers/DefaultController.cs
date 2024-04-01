@@ -9,6 +9,7 @@ namespace TraversalCoreProje.Controllers
         public IActionResult Index()
         {
             return View();
+<<<<<<< HEAD
 
 
         }
@@ -17,5 +18,8 @@ namespace TraversalCoreProje.Controllers
 
 
 
+=======
+        }
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

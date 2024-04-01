@@ -11,7 +11,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
+<<<<<<< HEAD
     public class EfContactUsDal : GenericRepository<ContactUs>, IContactUsDal
+=======
+    public class EfContactUsDal : GenericRepository<ContactUs> , IContactUsDal
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     {
         public void ContactUsStatusChangeToFalse(int id)
         {

@@ -6623,8 +6623,11 @@ button.bg-dark:focus {
   border-top: 0 !important;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 .border-right-0 {
   border-right: 0 !important;
 }
@@ -10037,7 +10040,11 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=bootstrap.css.map */
 
 
 
+=======
+/*# sourceMappingURL=bootstrap.css.map */
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf

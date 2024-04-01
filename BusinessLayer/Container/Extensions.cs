@@ -1,11 +1,16 @@
 ﻿using BusinessLayer.Abstarct;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+<<<<<<< HEAD
 using BusinessLayer.ValidationRule;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using DTOLayer.DTOs.AnnouncementDTOs;
+=======
+using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -43,6 +48,7 @@ namespace BusinessLayer.Container
 
             services.AddScoped<IAnnouncementService, AnnouncementManager>();
             services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+<<<<<<< HEAD
 
         }
         public static void CustomerValidator(this IServiceCollection services)
@@ -53,5 +59,10 @@ namespace BusinessLayer.Container
         }
 
 
+=======
+        }
+
+        
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
     }
 }

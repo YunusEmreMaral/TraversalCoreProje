@@ -13,10 +13,13 @@ namespace BusinessLayer.Abstarct
         List<Reservation> GetListWithReservationByAccepted(int id);
         List<Reservation> GetListWithReservationByPrevious(int id);
         List<Reservation> GetListWithReservationByWaitApproval(int id);
+<<<<<<< HEAD
         List<Reservation> TGetReservationWithUserandDestination();
         void TChangeToTrueByGuide(int id);
         void TChangeToFalseByGuide(int id);
 
+=======
+>>>>>>> 310f0bbc7b07f1810adab3aa5ebf3afa76c4dedf
 
     }
 }
